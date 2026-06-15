@@ -24,7 +24,7 @@ def find_sources(dirs, exts):
     return sources
 
 # Configuration
-libname = "plugin_name"
+libname = "horror_fighter"
 projectdir = "test_project"
 
 # Set up the environment
@@ -54,8 +54,8 @@ opts.Add(EnumVariable(
 # explicitly specify "enabled_classes" which disables all other classes.
 
 is_2d_profile_used = False
-is_3d_profile_used = False
-is_custom_profile_used = True
+is_3d_profile_used = True
+is_custom_profile_used = False
 if is_2d_profile_used:
     env["build_profile"] = "2d_build_profile.json"
 elif is_3d_profile_used:
@@ -79,6 +79,11 @@ Run the following command to download godot-cpp:
 
 # Include godot-cpp SConstruct, passing all command-line arguments
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
+
+# Ensure Linux builds use the C++ compiler as the linker so libstdc++ is resolved correctly.
+if env['platform'] == 'linux':
+    env['LINK'] = env['CXX']
+    env['SHLINK'] = env['CXX']
 
 # Process GDExtension-specific options
 source_dirs = env['source_dirs'].split(',')   # Convert comma-separated string to list

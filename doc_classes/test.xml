@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="test" inherits="Node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+		This is a test class to demonstrate how to create a class in Godot using C++. It contains a method that prints "Hello, World!" to the console and a property that can be set and get from the editor. The property is of type String and has a default value of "The beginning of something great".
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="say_hello">
+			<return type="void" />
+			<description>
+				This method prints "Hello, World!" to the console when called.
+				You can call this method from the editor or from another script to see the output in the console.
+				To call this method from the editor, select the node that has this script attached and click on the "Call" button in the inspector. Then, type "say_hello" and press Enter.
+				To call this method from another script, you can use the following code:
+				```
+				var test_node = get_node("path_to_your_node");
+				test_node.say_hello();
+				```
+				Make sure to replace "path_to_your_node" with the actual path to the node that has this script attached.
+				When you run the scene, you should see "Hello	, World!" printed in the console.
+				This is a simple example to demonstrate how to create a method in a C++ class for Godot and how to call it from the editor and from another script.
+				Feel free to modify the method to do something more interesting or to add more methods to the class!
+				Remember to compile your C++ code and reload the project in Godot to see the changes take effect.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="my_data" type="String" setter="set_my_data" getter="get_my_data" default="&quot;The beginning of something great&quot;">
+		</member>
+		this member is a property of type String that can be set and get from the editor. It has a default value of "The beginning of something great". You can modify this value from the editor or from another script using the setter and getter methods.
+		To set the value of this property from another script, you can use the following code:
+		```
+		var test_node = get_node("path_to_your_node");	
+	</members>
+</class>

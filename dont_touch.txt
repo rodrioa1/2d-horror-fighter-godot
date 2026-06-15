@@ -1,3 +1,3 @@
-plugin_name
-GODOT_VERSION_GOES_HERE
-GODOT_ENGINE_PATH_GOES_HERE
+horror_fighter
+4.5
+/home/odellrodriguez/Desktop/Godot_Engine/Godot_v4.6.3-stable_linux.x86_64
