@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cslnmq2wrl57j"]
+
+[ext_resource type="Texture2D" uid="uid://d03p4mkr5mlm2" path="res://horror_fighter/assets/DeadTileset/Dead Tileset V2.png" id="1_8mnws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nndgt"]
+size = Vector2(81, 6)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=1895437261]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=899545029]
+
+[node name="DeadTilesetV2" type="Sprite2D" parent="." unique_id=81695863]
+position = Vector2(71, -9)
+texture = ExtResource("1_8mnws")
+region_enabled = true
+region_rect = Rect2(79, 64, 82, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1561725196]
+position = Vector2(71, -10)
+shape = SubResource("RectangleShape2D_nndgt")
+one_way_collision = true
