@@ -112,6 +112,7 @@ radius = 13.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1677115923]
 position = Vector2(-2, -40)
+collision_layer = 2
 script = SubResource("GDScript_5c7p4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2093594830]

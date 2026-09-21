@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ejhbfcgeuguj"]
+
+[ext_resource type="Script" uid="uid://cydmq2yy8hm50" path="res://horror_fighter/scripts/coin.gd" id="1_ca2ol"]
+[ext_resource type="Texture2D" uid="uid://ciutu5t50wokv" path="res://horror_fighter/assets/Collectables-Sheet.png" id="1_ydpf0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca2ol"]
+atlas = ExtResource("1_ydpf0")
+region = Rect2(176, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsxlf"]
+atlas = ExtResource("1_ydpf0")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvr7o"]
+atlas = ExtResource("1_ydpf0")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks7le"]
+atlas = ExtResource("1_ydpf0")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaeqi"]
+atlas = ExtResource("1_ydpf0")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18xk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca2ol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsxlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvr7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks7le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaeqi")
+}],
+"loop": true,
+"name": &"fireCollectable",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ablt6"]
+radius = 8.0
+
+[node name="Coin" type="Area2D" unique_id=389801147]
+collision_mask = 2
+script = ExtResource("1_ca2ol")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1353926008]
+sprite_frames = SubResource("SpriteFrames_18xk0")
+animation = &"fireCollectable"
+autoplay = "fireCollectable"
+frame_progress = 0.17839386
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=69789038]
+shape = SubResource("CircleShape2D_ablt6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
